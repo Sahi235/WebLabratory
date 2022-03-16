@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="x">Enter X:</label>
+    <input id="x" type="x">
+    <br>
+    <label for="t">Enter T:</label>
+    <input id="t" type="t">
+    <br>
+    <label for="z">Enter Z:</label>
+    <input id="z" type="z">
+    <br>
+    <br>
+    <br>
+    <button id="btn">Calculate</button>
+    <br>
+    <br>
+    <br>
+    <script>
+
+        let x;
+        let t;
+        let z;
+
+        const btn = document.getElementById('btn');
+        const x_inp = document.getElementById('x');
+        const t_inp = document.getElementById('t');
+        const z_inp = document.getElementById('z');
+
+        const getValue = (inp) => +(inp.value);
+        const calculateBasedOnFormula = (x, t, z) => {
+
+            let y = 2 * Math.cos(x - Math.PI / 6) / ((1 / 2) + Math.pow(Math.sin(t), 2));
+
+            let w = y + (Math.pow(z, 2) / (3 + (z ** 2 / 5)));
+
+            return [y, w];
+        }
+        const addDisInput = (val) => {
+            let createdInput = document.createElement('input');
+            createdInput.setAttribute('id', 'result')
+            createdInput.setAttribute('disabled', 'true')
+            createdInput.value = val;
+            document.body.append(createdInput);
+        }
+        const deleteResultBox = () => {
+            let resultBox = document.getElementById('result');
+            resultBox.remove()
+        }
+
+
+
+
+        let added = false;
+        btn.addEventListener('click', () => {
+            x = getValue(x_inp);
+            t = getValue(t_inp);
+            z = getValue(z_inp);
+            if (added) {
+                deleteResultBox();
+            }
+            let result = calculateBasedOnFormula(x, t, z);
+            addDisInput(result[0]);
+            added = true;
+
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

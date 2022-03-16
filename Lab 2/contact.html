@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="Styles.css" />
+    <title>Portfolio | Contact us</title>
+  </head>
+
+  <body>
+    <header>
+      <h3><a href="index.html">index</a></h3>
+      <h3><a href="contact.html">Contact us</a></h3>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="project1.html" class="selected-proj">Page 1</a></li>
+        <li><a href="project2.html">Page 2</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="container">
+        <section>
+          <div class="form-data">
+            <label for="inc-phone">Phone</label>
+            <input id="inc-phone" type="text" readonly value="+994507913221" />
+            <label for="inc-email">Email</label>
+            <input
+              id="inc-email"
+              type="text"
+              readonly
+              value="ex:youremail@mail.com"
+            />
+            <label for="inc-address">Address</label>
+            <input
+              id="inc-address"
+              type="text"
+              readonly
+              value="Cehhenem. 28 may, adnsu"
+            />
+          </div>
+        </section>
+        <section>
+          <form action="#">
+            <label for="fullname">Full Name</label>
+            <input
+              id="fullname"
+              type="text"
+              placeholder="Adu yaz"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="emailu yaz"
+              required
+            />
+            <label for="usr-message">Your message</label>
+            <textarea
+              placeholder="De gorek"
+              name="message"
+              id="usr-message"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+            <input type="submit" value="Gonder" />
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
